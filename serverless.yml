@@ -22,8 +22,9 @@ provider:
   runtime: nodejs6.10
 
 # you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
+  stage: dev
+  region: us-west-2
+
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -55,8 +56,22 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  getPhotos:
+    handler: handler.getPhotos
+  events:
+    - http:
+        path: users/photos
+        method: get
+        cors:
+        origin: '*'
+        headers:
+          - Content-Type
+          - X-Amz-Date
+          - Authorization
+          - X-Api-Key
+          - X-Amz-Security-Token
+          - X-Amz-User-Agent
+        allowCredentials: false
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
@@ -85,7 +100,6 @@ functions:
 #      - cognitoUserPool:
 #          pool: MyUserPool
 #          trigger: PreSignUp
-
 #    Define function environment variables here
 #    environment:
 #      variable2: value2
