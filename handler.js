@@ -4,6 +4,7 @@ module.exports.getPhotos = (event, context, callback) => {
   const AWS = require('aws-sdk');
   const s3 = new AWS.S3();
   const params = {Bucket: 'photo-bucket-tmp-prjct'};
+  s3.listObjects() //add params, check docs
   const response = {
     statusCode: 200,
     body: JSON.stringify({
