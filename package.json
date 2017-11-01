@@ -1,8 +1,8 @@
 {
-  "name": "aws-sdk",
+  "name": "aws-photo-bucket",
   "version": "1.0.0",
   "description": "[Intermediate] AWS, S3, Api-Gatway, Lambda, Serverless - Intro into AWS cloud services and Serverless",
-  "main": "app.js",
+  "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/zakattack9/aws-photo-bucket.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zakattack9/aws-photo-bucket/issues"
   },
-  "homepage": "https://github.com/zakattack9/aws-photo-bucket#readme"
+  "homepage": "https://github.com/zakattack9/aws-photo-bucket#readme",
+  "dependencies": {
+    "aws-sdk": "^2.142.0"
+  }
 }
