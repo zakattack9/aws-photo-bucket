@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports.getPhotos = (event, context, callback) => {
+  const lambdaOwner = "Zak";
   const AWS = require('aws-sdk');
   const s3 = new AWS.S3();
   const params = {
@@ -14,10 +15,10 @@ module.exports.getPhotos = (event, context, callback) => {
        "Access-Control-Allow-Origin": "*",
        "Access-Control-Allow-Credentials": true
       },
-      body: {
-        message: JSON.stringify(data)
+      body: JSON.stringify({
+        message: data
         //input: event,
-      },
+      })
     };
     callback(null, response);
   });
