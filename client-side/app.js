@@ -11,3 +11,4 @@ $('button').click(function(){
 let generateImg = image => {
 	$("#pictures").append($(`<img class="image" src="${image}"/>`).hide().fadeIn(500));
 }
+
